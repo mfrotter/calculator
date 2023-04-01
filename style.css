@@ -1,0 +1,31 @@
+body {
+    display: flex;
+    justify-content: center;
+    padding: 25%;
+}
+
+.screen {
+    margin: 10% 5%;
+    width: auto;
+    height: 40px;
+    background-color: blanchedalmond;
+}
+
+.calc {
+    display: flex;
+    flex-direction: column;
+    background-color: grey;
+    width: 40%;
+    height: auto;
+    border-style: solid;
+}
+
+.row {
+    display: flex;
+    justify-content: space-around;
+    
+}
+
+button {
+    width: 20%;
+}

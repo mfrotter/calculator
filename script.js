@@ -10,22 +10,18 @@ let equalBool = false;
 
   function operate(num1, op, num2) {
     if (op === "+"){
-        console.log("add")
         return add(num1,num2);
     }
 
     else if (op === "-"){
-        console.log("subtract")
         return subtract(num1,num2);
     }
 
     else if (op === "*"){
-        console.log("multiply")
         return multiply(num1,num2);
     }
 
     else if (op === "/"){
-        console.log("divide")
         return divide(num1,num2);
     }
 
@@ -66,20 +62,20 @@ buttonsArray.forEach((item) => {
     item.addEventListener("click", function () {
 
 
-        if((item.id >= 0 || item.id <= 9) && number2 === -2){
-            screen.innerText += item.id;
+        if((item.value >= 0 || item.value <= 9) && number2 === -2){
+            screen.innerText += item.value;
             number1 = screen.innerText;
         }
 
-        else if (item.id >= 0 || item.id <= 9) {
+        else if (item.value >= 0 || item.value <= 9) {
 
             if(equalBool === true){
                 screen.innerText = "";
-                number1 = item.id;
+                number1 = item.value;
                 number2 = -2;
                 operator = "";
                 equalBool = false;
-                screen.innerText = item.id
+                screen.innerText = item.value
             }
 
             else{
@@ -87,16 +83,16 @@ buttonsArray.forEach((item) => {
                 if(count === 0){
                     screen.innerText = "";
                 }
-                screen.innerText += item.id;
+                screen.innerText += item.value;
                 number2 = screen.innerText;
                 count++;
             }
 
         }
 
-        if(item.id === "*" || item.id === "/" || item.id === "+" || item.id === "-"){
+        if(item.value === "*" || item.value === "/" || item.value === "+" || item.value === "-"){
             if(number2 === -1) {
-                operator = item.id;
+                operator = item.value;
                 number2 = 0;
                 equalBool = false;
             }
@@ -105,19 +101,19 @@ buttonsArray.forEach((item) => {
 
                 count = 0;
                 screen.innerText = operate(number1, operator, number2)
-                operator = item.id;
+                operator = item.value;
                 number2 = -1;
                 number1 = screen.innerText;
             }
 
             else {
-                operator = item.id;
+                operator = item.value;
                 number2 = 0;
                 equalBool = false;
             }
         }
 
-        if(item.id === "=" && number1 >= 0 && number2 >= 0){
+        if(item.value === "=" && number1 >= 0 && number2 >= 0){
             count = 0;
             screen.innerText = operate(number1, operator, number2)
             number2 = -1;
@@ -125,7 +121,7 @@ buttonsArray.forEach((item) => {
             equalBool = true;
         }
 
-        if(item.id === "clear"){
+        if(item.value === "clear"){
             screen.innerText = "";
             number1 = 0;
             number2 = -2;
@@ -133,19 +129,19 @@ buttonsArray.forEach((item) => {
             equalBool = false;
         }
 
-        if(item.id === ".") {
+        if(item.value === ".") {
             if(!String(number2).includes(".") && number2 >= 0){
-                    screen.innerText += item.id;
+                    screen.innerText += item.value;
                     number2 = screen.innerText;
             }
 
             else if (!String(number1).includes(".")) {
-                screen.innerText += item.id;
+                screen.innerText += item.value;
                 number1 = screen.innerText;
             }
         }
 
-        if(item.id === "backspace"){
+        if(item.value === "backspace"){
             // if(number2 >= 0) {
                 screen.innerText.slice(0,-1);
             // }

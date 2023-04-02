@@ -7,8 +7,15 @@ body {
 .screen {
     margin: 2.5% 1.25%;
     width: auto;
-    height: 40px;
+    height: 80px;
     background-color: blanchedalmond;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 2.5%;
+    font-size: 60px;
+    border-style: solid;
+    border-width: 10px;
 }
 
 .calc {
@@ -20,13 +27,43 @@ body {
     border-style: solid;
 }
 
+.buttons {
+    margin: 2.5% 1.25%;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
 .row {
     display: flex;
-    justify-content: space-around;
+    flex: 1;
+    justify-content: space-between;
+
     
 }
 
 button {
-    width: 24%;
+    flex-basis: 24%;
+    font-size: 24px;
 
+}
+
+#row5 {
+    gap:4px;
+}
+
+.row #zero {
+    flex-grow: 2;
+}
+
+.number {
+    background-color: rgb(16, 105, 43);
+}
+
+.operator{
+    background-color: orange;
+}
+
+.misc {
+    background-color: rgb(57, 170, 214);
 }

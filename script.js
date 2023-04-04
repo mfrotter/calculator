@@ -36,13 +36,13 @@ screen.innerText= 0;
 function add(a,b) {
     a = Number(a);
     b = Number(b);
-    return a + b;
+    return Math.round((a + b) * 10000) / 10000;
 }
 
 function subtract(a,b) {
     a = Number(a);
     b = Number(b);
-    return a - b;
+    return Math.round((a - b) * 10000) / 10000;
 }
 
 function multiply(a,b) {
@@ -159,6 +159,32 @@ buttonsArray.forEach((item) => {
                 number1[1] = screen.innerText;
             }
  
+        }
+
+        if(item.value === "plusOrMinus") {
+            if (number1[0] === true && number2[0] === false){
+                number1[1] *= -1;
+                screen.innerText = number1[1];
+
+            }
+
+            else if(number1[0] === true && number2[0] === true){
+                number2[1] *= -1;
+                screen.innerText = number2[1];
+            }
+        }
+
+        if(item.value === "%") {
+            if (number1[0] === true && number2[0] === false){
+                number1[1] /= 100;
+                screen.innerText = number1[1];
+
+            }
+
+            else if(number1[0] === true && number2[0] === true){
+                number2[1] /= 100;
+                screen.innerText = number2[1];
+            } 
         }
 
     });
